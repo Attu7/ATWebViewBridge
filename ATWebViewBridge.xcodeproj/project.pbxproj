@@ -15,6 +15,11 @@
 		247545BD1F7CDD9F00AF4ED3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545BC1F7CDD9F00AF4ED3 /* main.m */; };
 		247545C71F7CDD9F00AF4ED3 /* ATWebViewBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545C61F7CDD9F00AF4ED3 /* ATWebViewBridgeTests.m */; };
 		247545D21F7CDD9F00AF4ED3 /* ATWebViewBridgeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545D11F7CDD9F00AF4ED3 /* ATWebViewBridgeUITests.m */; };
+		247545EC1F7CE50500AF4ED3 /* ATBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545E81F7CE50500AF4ED3 /* ATBaseWebViewController.m */; };
+		247545ED1F7CE50500AF4ED3 /* ATWebViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545EA1F7CE50500AF4ED3 /* ATWebViewBridge.m */; };
+		247545EE1F7CE50500AF4ED3 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 247545EB1F7CE50500AF4ED3 /* Resource.bundle */; };
+		247545F11F7CE51900AF4ED3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247545F01F7CE51900AF4ED3 /* WebViewController.m */; };
+		247545F51F7CF18100AF4ED3 /* Test.html in Resources */ = {isa = PBXBuildFile; fileRef = 247545E51F7CDDB500AF4ED3 /* Test.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,15 @@
 		247545CD1F7CDD9F00AF4ED3 /* ATWebViewBridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATWebViewBridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		247545D11F7CDD9F00AF4ED3 /* ATWebViewBridgeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATWebViewBridgeUITests.m; sourceTree = "<group>"; };
 		247545D31F7CDD9F00AF4ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		247545E51F7CDDB500AF4ED3 /* Test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Test.html; sourceTree = "<group>"; };
+		247545E71F7CE50500AF4ED3 /* ATBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBaseWebViewController.h; sourceTree = "<group>"; };
+		247545E81F7CE50500AF4ED3 /* ATBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBaseWebViewController.m; sourceTree = "<group>"; };
+		247545E91F7CE50500AF4ED3 /* ATWebViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATWebViewBridge.h; sourceTree = "<group>"; };
+		247545EA1F7CE50500AF4ED3 /* ATWebViewBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATWebViewBridge.m; sourceTree = "<group>"; };
+		247545EB1F7CE50500AF4ED3 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		247545EF1F7CE51900AF4ED3 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		247545F01F7CE51900AF4ED3 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		247545F31F7CEE4B00AF4ED3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,7 @@
 				247545C51F7CDD9F00AF4ED3 /* ATWebViewBridgeTests */,
 				247545D01F7CDD9F00AF4ED3 /* ATWebViewBridgeUITests */,
 				247545AB1F7CDD9F00AF4ED3 /* Products */,
+				247545F21F7CEE4A00AF4ED3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +116,14 @@
 		247545AC1F7CDD9F00AF4ED3 /* ATWebViewBridge */ = {
 			isa = PBXGroup;
 			children = (
+				247545E61F7CE50500AF4ED3 /* ATWebViewBridge */,
 				247545AD1F7CDD9F00AF4ED3 /* AppDelegate.h */,
 				247545AE1F7CDD9F00AF4ED3 /* AppDelegate.m */,
 				247545B01F7CDD9F00AF4ED3 /* ViewController.h */,
 				247545B11F7CDD9F00AF4ED3 /* ViewController.m */,
+				247545EF1F7CE51900AF4ED3 /* WebViewController.h */,
+				247545F01F7CE51900AF4ED3 /* WebViewController.m */,
+				247545E51F7CDDB500AF4ED3 /* Test.html */,
 				247545B31F7CDD9F00AF4ED3 /* Main.storyboard */,
 				247545B61F7CDD9F00AF4ED3 /* Assets.xcassets */,
 				247545B81F7CDD9F00AF4ED3 /* LaunchScreen.storyboard */,
@@ -130,6 +149,26 @@
 				247545D31F7CDD9F00AF4ED3 /* Info.plist */,
 			);
 			path = ATWebViewBridgeUITests;
+			sourceTree = "<group>";
+		};
+		247545E61F7CE50500AF4ED3 /* ATWebViewBridge */ = {
+			isa = PBXGroup;
+			children = (
+				247545E71F7CE50500AF4ED3 /* ATBaseWebViewController.h */,
+				247545E81F7CE50500AF4ED3 /* ATBaseWebViewController.m */,
+				247545E91F7CE50500AF4ED3 /* ATWebViewBridge.h */,
+				247545EA1F7CE50500AF4ED3 /* ATWebViewBridge.m */,
+				247545EB1F7CE50500AF4ED3 /* Resource.bundle */,
+			);
+			path = ATWebViewBridge;
+			sourceTree = "<group>";
+		};
+		247545F21F7CEE4A00AF4ED3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				247545F31F7CEE4B00AF4ED3 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247545F51F7CF18100AF4ED3 /* Test.html in Resources */,
 				247545BA1F7CDD9F00AF4ED3 /* LaunchScreen.storyboard in Resources */,
 				247545B71F7CDD9F00AF4ED3 /* Assets.xcassets in Resources */,
 				247545B51F7CDD9F00AF4ED3 /* Main.storyboard in Resources */,
+				247545EE1F7CE50500AF4ED3 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				247545B21F7CDD9F00AF4ED3 /* ViewController.m in Sources */,
+				247545F11F7CE51900AF4ED3 /* WebViewController.m in Sources */,
+				247545EC1F7CE50500AF4ED3 /* ATBaseWebViewController.m in Sources */,
 				247545BD1F7CDD9F00AF4ED3 /* main.m in Sources */,
 				247545AF1F7CDD9F00AF4ED3 /* AppDelegate.m in Sources */,
+				247545ED1F7CE50500AF4ED3 /* ATWebViewBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

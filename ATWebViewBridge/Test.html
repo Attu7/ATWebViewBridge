@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript" type="text/javascript">
+            
+            //普通调用
+            function testOne() {
+                ATWebViewBridge.callNativeFunction(arguments.callee.toString());
+            }
+            
+            //带参数
+            function testTwo() {
+                var params = {
+                    name:'Peter',
+                    age:34
+                }
+                ATWebViewBridge.callNativeFunction(arguments.callee.toString(),params);
+            }
+            
+            //带参数、回调
+            function testThree() {
+                var params = {
+                    name:'小王',
+                    age:13
+                }
+                ATWebViewBridge.callNativeFunction(arguments.callee.toString(),params,function(data){
+                                                   //回调
+                                                   document.getElementById("testThreeCallback").innerHTML = data;
+                                                   });
+            }
+            
+            //带参数、回调、返回值
+            function testFour() {
+                var params = {
+                    name:'三胖',
+                    age:30
+                }
+                /*
+                 参数写法
+                 第一个：arguments.callee.toString()  即该方法的方法名
+                 第二个：params   需要传递到OC的参数
+                 第三个：匿名函数   从OC获取的回调
+                 第四个：匿名函数   从OC获取的返回值
+                 
+                 注：如不需要该参数可写 null
+                 如：ATWebViewBridge.callNativeFunction(arguments.callee.toString(), params, null, function(data) {
+                                                         //返回值
+                                                        });
+                 */
+                ATWebViewBridge.callNativeFunction(arguments.callee.toString(), params, function(data) {
+                                                   //回调
+                                                   document.getElementById("testFourCallback").innerHTML = data;
+                                                   }, function(data) {
+                                                   //返回值
+                                                   document.getElementById("testFourReturnValue").innerHTML = data;
+                                                   });
+            }
+            
+            </script>
+            <style type="text/css">
+                * {
+                    font-size: 40px;
+                }
+            </style>
+    </head>
+    
+    <body>
+        <h1>H5与Native交互Demo</h1>
+        </br>
+        <input type="button" value="普通调用" onclick="testOne()" />
+        </br></br>
+        
+        <input type="button" value="传递参数" onclick="testTwo()" />
+        </br></br>
+        
+        <input type="button" value="传递参数和回调" onclick="testThree()" />
+        <h1>回调   <label id = "testThreeCallback" type="label"/></h1>
+        <br />
+        
+        
+        <input type="button" value="传递参数、回调和返回值" onclick="testFour()">
+        <h1>回调   <label id = "testFourCallback" type="label"/></h1>
+        <h1>返回值  <label id = "testFourReturnValue" type="label"/></h1>
+        
+    </body>
+</html>

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WebViewController.h"
 
 @interface ViewController ()
 
@@ -19,6 +20,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)onClickButton:(UIButton *)sender {
+    WebViewController *webViewVC = [[WebViewController alloc] init];
+    webViewVC.h5URL = [NSString stringWithFormat:@"file://%@",[[NSBundle mainBundle] pathForResource:@"Test" ofType:@"html"]];
+    [self.navigationController pushViewController:webViewVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
