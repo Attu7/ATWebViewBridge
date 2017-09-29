@@ -23,13 +23,6 @@
 - (void)configWKWebview {
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-    // 设置偏好设置
-    config.preferences = [[WKPreferences alloc] init];
-    // 在iOS上默认为NO，表示不能自动通过窗口打开
-    config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
-    // web内容处理池
-    config.processPool = [[WKProcessPool alloc] init];
-    
     WKUserScript *usrScript = [[WKUserScript alloc] initWithSource:[ATWebViewBridge sharedInstance].injectJS injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
     
     // 通过JS与webview内容交互
@@ -43,8 +36,8 @@
 
     //通过默认的构造器来创建对象
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.h5URL]]];
     [self.view addSubview:self.webView];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.h5URL]]];
     
     [[ATWebViewBridge sharedInstance] configWebView:self.webView];
 }
